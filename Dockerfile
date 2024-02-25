@@ -7,7 +7,6 @@ WORKDIR /app
 # Copy Python files, config file, and environment files into the container
 COPY app.py .
 COPY config.py .
-COPY __init__.py .
 COPY requirements.txt .
 
 #set env variables
