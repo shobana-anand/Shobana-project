@@ -12,12 +12,14 @@ from config import app, db
 
 # Configure logging
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 port_number = int(os.environ.get("APP_PORT", 5153))
 
 
 @app.route("/health_check")
 def health_check():
+    logger.info("Health check OK")
     return "ok"
 
 
@@ -77,7 +79,7 @@ def all_user_visits():
             "visits": row[1],
             "joined_at": str(row[2])
         }
-    
+    app.logger.info(response)
     return jsonify(response)
 
 
