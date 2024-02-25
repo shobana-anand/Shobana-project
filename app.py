@@ -1,5 +1,6 @@
 import logging
 import os
+import sys
 
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime, timedelta
@@ -9,6 +10,8 @@ from random import randint
 
 from config import app, db
 
+# Configure logging
+logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
 port_number = int(os.environ.get("APP_PORT", 5153))
 
