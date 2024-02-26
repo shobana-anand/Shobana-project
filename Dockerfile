@@ -9,14 +9,6 @@ COPY app.py .
 COPY config.py .
 COPY requirements.txt .
 
-#set env variables
-#ENV DB_USERNAME=postgres
-#ENV DB_PASSWORD=BDzXS7u5jF
-#ENV DB_HOST=shob-db-postgresql.default.svc.cluster.local
-#ENV DB_PORT=5432
-#ENV DB_NAME=postgres
-
-
 # Install dependencies
 RUN pip install --upgrade pip
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
