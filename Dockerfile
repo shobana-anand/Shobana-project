@@ -4,6 +4,10 @@ FROM python:3.12.1
 # Set the working directory in the container
 WORKDIR /app
 
+# All ENV Variables are in configmap files.
+# env-config.yml - for env variables
+# secrets-config.yml - for sensitive data
+
 # Copy Python files, config file, and environment files into the container
 COPY app.py .
 COPY config.py .
